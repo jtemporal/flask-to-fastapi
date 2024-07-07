@@ -1,10 +1,20 @@
 # Migrating a Web Application from Flask to FastAPI: Avoiding Pitfalls
 
+Have you ever had to migrate code from one stack to another? Migrating stacks on an application can be a daunting task. The secret is to keep changes to a small size and watch out for blind copy-and-paste.
+
+Join me in this tutorial to learn the key differences between FastAPI and Flask plus how these differences will affect your stack migration.
+
+Learn by doing it: migrate a simple Flask application to FastAPI. Learn how templates work in each framework, how you can use routers to create more complex applications in both Flask and FastAPI, and finally some tips if you are considering migrating from one to the other and vice-versa.
+
+After this tutorial, you will feel confident to start your stack migrations between these two frameworks.
+
 [This tutorial was made for EuroPython 2024](http://ep2024.europython.eu/session/migrating-a-web-application-from-flask-to-fastapi-avoiding-pitfalls).
+
+## This Repo
 
 This is a repo containing two web applications:
 1. `flask-webapp`: Flask web application complete that will be used to migrate over to fastAPI;
-1. `fastapi-webapi`: FastAPI starter application, this will be updated to work similarly to the Flask one.
+1. `fastapi-webapp`: FastAPI starter application, this will be updated to work similarly to the Flask one.
 
 Both applications count with an integration with [Auth0 by Okta, use this link to sign up](https://a0.to/plg_signup) and create your **free** account.
 
@@ -26,11 +36,6 @@ I recommend either connecting to the Codespace on VS Code on your machine using 
 1. Go into the `flask-webapp/` create a python environment and install the requirements;
 1. Go into the `fastapi-webapp/` create a python environment and install the requirements.
 Both folders count with the detailed instructions on their perspective `README.md` files.
-</details>
-
-<details>
-<summary>Code</summary>
-
 </details>
 
 ----
