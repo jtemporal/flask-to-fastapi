@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <title>FastAPI + Auth0 Sample App </title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div>
+      {% if request.path != '/' %}
+      {% include "nav_bar.html" %}
+      {% endif %}
+      {% block content %}{% endblock %}
+    </div>
+  </body>
+  <script src="/static/scripts.js"></script> 
+</html>
