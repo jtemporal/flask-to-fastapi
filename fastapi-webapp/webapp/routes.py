@@ -1,24 +1,46 @@
-# import the required modules here
-from fastapi import Depends
+from fastapi import APIRouter, Depends, Request
+from fastapi.templating import Jinja2Templates
 
 from auth.dependencies import protected_endpoint
+from utils import to_pretty_json
 
 
-# Define your router
+webapp_router = APIRouter()
 
-# use the router as a decorator, tip: method should be `get` of `/`
-# signature: ("/")
-def heels():
-    return {'message': 'There should be a template here'}
+templates = Jinja2Templates(directory="webapp/templates")
+templates.env.filters['to_pretty_json'] = to_pretty_json
 
 
-# use the router as a decorator, tip: method should be `get` of `/home`
-# signature: ("/home")
-def home():
-    return {'message': 'There should be a template here'}
+@webapp_router.get("/")
+def heels(request: Request):
+    """Heels page"""
+    
+    return templates.TemplateResponse(
+        "heels.html",
+        {
+            "request": request
+        }
+    )
 
-# use the router as a decorator, tip: method should be `get` of `/profile`
-# signature: ("/profile", dependencies=[Depends(protected_endpoint)])
-def profile():
-    # dependecies will be explained with the sessions portion of the tutorial
-    return {'message': 'There should be a template here'}
+
+@webapp_router.get("/home")
+def home(request: Request):
+    """Home page"""
+    return templates.TemplateResponse(
+        "home.html",
+        {
+            "request": request
+        }
+    )
+
+
+@webapp_router.get("/profile", dependencies=[Depends(protected_endpoint)])
+def profile(request: Request):
+
+    return templates.TemplateResponse(
+        "profile.html",
+        {
+            "request": request,
+            "userinfo": request.session['userinfo']
+        }
+    )
