@@ -4,7 +4,7 @@
 
 This is a repo containing two web applications:
 1. `flask-webapp`: Flask web application complete that will be used to migrate over to fastAPI;
-1. `fastapi-webapi`: FastAPI starter application, this will be updated to work similarly to the Flask one.
+1. `fastapi-webapp`: FastAPI starter application, this will be updated to work similarly to the Flask one.
 
 Both applications count with an integration with [Auth0 by Okta, use this link to sign up](https://a0.to/plg_signup) and create your **free** account.
 
@@ -26,11 +26,6 @@ I recommend either connecting to the Codespace on VS Code on your machine using 
 1. Go into the `flask-webapp/` create a python environment and install the requirements;
 1. Go into the `fastapi-webapp/` create a python environment and install the requirements.
 Both folders count with the detailed instructions on their perspective `README.md` files.
-</details>
-
-<details>
-<summary>Code</summary>
-
 </details>
 
 ----
