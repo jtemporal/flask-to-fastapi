@@ -1,0 +1,4 @@
+flask>=2.2.2
+authlib>=1.2.0
+requests>=2.28.2
+auth0-python==4.1.0

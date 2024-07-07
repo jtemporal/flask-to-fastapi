@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+<head>
+  <title>Profile</title>
+</head>
+{% block content %}
+
+<div>
+  <h2>Profile</h2>
+  <div>
+    <p>Welcome home {{ session['userinfo']['name'] }}!</p>
+    <p>You clicked your heels 3 times!</p>
+  </div>
+  <div>
+    <p class="json-title">Here is your profile information:</p>
+    <div class="json-container">
+      <pre>{{ session['userinfo'] | to_pretty_json }}</pre>
+    </div>
+  </div>
+</div>
+{% endblock %}
